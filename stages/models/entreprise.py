@@ -13,7 +13,7 @@ class Entreprise(models.Model):
     class Meta:
         ordering = ["nom"]
         verbose_name = "entreprise"
-        verbose_name_plural = "entreprises"
+        verbose_name_plural = 'entreprises'
 
     def __str__(self):
         return f"{self.nom} ({self.ville})"
