@@ -16,4 +16,5 @@ class Personne(models.Model):
         verbose_name = "personne"
         verbose_name_plural = 'personnes'
         abstract = True
+    
 
