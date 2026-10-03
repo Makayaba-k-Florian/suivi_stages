@@ -26,3 +26,17 @@ la relation entre candidature et stage le permet , au niveau de la base  elle-m�
   on ne peut pas supprimer un etudiant ou un enseigant ou un tuteur  ayant intervenu dans un stage un stage, pour ne pas effacer leur historique.
  on ne peut pas supprimer une offre ayant fait l'objet d'une candidature , pour ne pas effacer leur historique.
           
+## 3. Lire le SQL
+**a.** 11 tables on été creer.<br>
+les tables ne corespondant pas a celle que j'ai ecrrite sont:<br>
+-stage_etudiants<br>
+-offre_competences<br>
+-etudiant_competences<br>
+**b.** il n'y a pas de table personne ,c'est coerant avec la partie 2. <br>
+**c.** elle se represente sous forme de clé referencer dans la table candidature.<br>
+**d.** C'est Django (au niveau applicatif en Python) qui gère et applique entièrement ces règles, et non le serveur de base de données (SQL).
+
+## 4. L’administration
+**a.** on ne peut pas supprimer , c'est ce que la responsable voulais
+
+## 5. Peupler, puis interroger

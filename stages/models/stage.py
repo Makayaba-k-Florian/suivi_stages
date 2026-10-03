@@ -25,7 +25,7 @@ class Stage(models.Model):
         Entreprise,on_delete=models.PROTECT,
         related_name="stages"
     )
-    enseigant = models.ForeignKey(
+    enseignant = models.ForeignKey(
         EnseignantReferent,on_delete=models.PROTECT,
         related_name="stages"
     )

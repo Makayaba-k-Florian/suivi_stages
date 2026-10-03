@@ -4,10 +4,12 @@ from django.db import models
 
 class Personne(models.Model):
 
-
+    class Sexe(models.TextChoices):
+        FEMME = "F"
+        HOMME = "M"
     nom = models.CharField(max_length=120)
     prenom = models.CharField(max_length=120)
-    sexe = models.TextChoices("F","M")
+    sexe = models.CharField(choices=Sexe,null=True)
     date_naissance = models.DateField()
     email = models.EmailField()
 

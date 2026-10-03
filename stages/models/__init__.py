@@ -5,6 +5,8 @@ from .tuteur_entreprise import TuteurEntreprise
 from .candidature import Candidature
 from .personne import Personne
 from .stage import Stage
+from .competence import Competence 
+from .offre import Offre  
 
 
 
@@ -17,4 +19,5 @@ __all__ = ["Entreprise",
 "TuteurEntreprise",
 "Candidature",
 "Personne",
-'stage']
+'Stage',
+"Competence"]

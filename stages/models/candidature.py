@@ -15,8 +15,9 @@ class Candidature(models.Model):
         
     date_depot = models.DateField()
     statut = models.CharField(choices=Statut)
-    etudiants = models.ManyToManyField(
-        Etudiant,related_name="candidatures"
+    etudiants = models.ForeignKey(
+        Etudiant,related_name="candidatures",on_delete=models.PROTECT,
+        null=True
     )
     offre = models.ForeignKey(
         Offre,on_delete=models.PROTECT,
