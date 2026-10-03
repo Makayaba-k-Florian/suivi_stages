@@ -25,4 +25,4 @@ la relation entre candidature et stage le permet , au niveau de la base  elle-mÃ
  on ne peut pas supprimer une entreprise qui a publiÃ© des offres ou qui a des tuteurs ou qui a acceuili un stage, pour ne pas effacer leur historique.
   on ne peut pas supprimer un etudiant ou un enseigant ou un tuteur  ayant intervenu dans un stage un stage, pour ne pas effacer leur historique.
  on ne peut pas supprimer une offre ayant fait l'objet d'une candidature , pour ne pas effacer leur historique.
-   
+    
