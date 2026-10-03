@@ -8,7 +8,7 @@ class Personne(models.Model):
     nom = models.CharField(max_length=120)
     prenom = models.CharField(max_length=120)
     sexe = models.TextChoices("F","M")
-    date_naissance = models.DateField(auto_now=False)
+    date_naissance = models.DateField()
     email = models.EmailField()
 
     class Meta:
