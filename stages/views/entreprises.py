@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Entreprise
+from ..models import Entreprise
 
 # Create your views here.
 

@@ -1,0 +1,40 @@
+{% extends 'stages/base.html' %}
+{% block titre %}
+  Tous les offres
+{% endblock %}
+
+{% block contenu %}
+  <h1>Offres</h1>
+  <div></div>
+
+  <table border="2">
+    <thead>
+      <tr>
+        <th>Titre</th>
+        <th>Description</th>
+        <th>Dalais</th>
+        <th>Nombres de places</th>
+        <th>Competences</th>
+        <th>Entreprise</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for offre in offres %}
+        <tr>
+          <td>{{ offre.titre }}</td>
+          <td>{{ offre.description }}</td>
+          <td>{{ offre.date_debut }} - {{ offre.date_fin }}</td>
+          <td>{{ offre.nb_places }}</td>
+          <td>
+            {% for competence in offre.competences.all %}
+              <div>{{ competence.libelle }}</div>
+            {% endfor %}
+          </td>
+          <td>{{ offre.entreprise.nom }}</td>
+        </tr>
+      {% empty %}
+        <div>Aucune offres pour le moment.</div>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
