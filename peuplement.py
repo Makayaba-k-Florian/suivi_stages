@@ -23,7 +23,7 @@ Competence.objects.all().delete()
 
 print("Début du peuplement de la base de données...")
 
-c_python = Competence.objects.create(libelle="Python / Django")
+c_python = Competence.objects.create(libelle="django")
 c_sql = Competence.objects.create(libelle="SQL / PostgreSQL")
 c_js = Competence.objects.create(libelle="JavaScript / React")
 c_devops = Competence.objects.create(libelle="Docker & DevOps")
