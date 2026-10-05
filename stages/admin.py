@@ -52,7 +52,7 @@ class CandidatureAdmin(admin.ModelAdmin):
     
 
 @admin.register(Stage)
-class StageAdmin(admin.ModelAdmin):
+class StageAdmin(admin.ModelAdmin): 
     list_display = ["sujet",]
     search_fields = ["sujet",]
     

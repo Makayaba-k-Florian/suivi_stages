@@ -74,16 +74,13 @@ cand_4 = Candidature.objects.create(date_depot=date.today() - timedelta(days=4),
 cand_5 = Candidature.objects.create(date_depot=date.today() - timedelta(days=2), statut="En refuseé", etudiants=et_5, offre=off_2)
 cand_6 = Candidature.objects.create(date_depot=date.today() - timedelta(days=1), statut="retenue", etudiants=et_1, offre=off_3)
 
-# --- 8. STAGES (2 issus des candidatures retenues/acceptées) ---
-# Cohérence : 
-# - Stage 1 : issu de cand_1 (et_1 sur off_1 de ent_1). Associe tut_1 (Sokodé) et ens_1.
+#stage
 stage_1 = Stage.objects.create(sujet="Développement de l'API de gestion locale - Sokodé Tech",
-                               enseignant=ens_1,tuteur=tut_1,entreprise=ent_1)
+                               enseignant=ens_1,tuteur=tut_1,entreprise=ent_1,candidature=cand_3)
 stage_1.etudiants.add(et_4)
-# - Stage 2 : issu de cand_2 (et_3 sur off_2 de ent_2). Associe tut_2 (Sokodé) et ens_2.
+
 stage_2 = Stage.objects.create(sujet="Mise en production de l'infrastructure Cloud - Centrale Numérique",
-                               enseignant=ens_2,tuteur=tut_2,entreprise=ent_2)
+                               enseignant=ens_2,tuteur=tut_2,entreprise=ent_2,candidature=cand_6)
 stage_1.etudiants.add(et_1)
 
 
-print("Peuplement terminé avec succès ! 5 compétences, 3 entreprises, 2 tuteurs, 2 enseignants, 5 étudiants, 3 offres, 6 candidatures et 2 stages ont été générés.")
