@@ -42,3 +42,11 @@ offres_compatibles = Offre.objects.filter(
 print(offres_compatibles)
 
 ```
+
+# 6. Ce que la base accepte
+
+a-) <br>
+1. est accepter<br>
+2. est accepter<br>
+3. est refuser<br>
+b-) django dois controller avant l'insertion<br>

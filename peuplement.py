@@ -67,12 +67,12 @@ off_3 = Offre.objects.create(titre="Intégrateur Front-end Senior",date_debut=da
 off_3.competences.add(c_js, c_agile)
 
 
-cand_1 = Candidature.objects.create(date_depot=date.today() - timedelta(days=10), statut="déposée", etudiants=et_1, offre=off_1)
-cand_2 = Candidature.objects.create(date_depot=date.today() - timedelta(days=8), statut="refuseé", etudiants=et_3, offre=off_2)
-cand_3 = Candidature.objects.create(date_depot=date.today() - timedelta(days=5), statut="retenue", etudiants=et_4, offre=off_1)
-cand_4 = Candidature.objects.create(date_depot=date.today() - timedelta(days=4), statut="En déposée", etudiants=et_2, offre=off_3)
-cand_5 = Candidature.objects.create(date_depot=date.today() - timedelta(days=2), statut="En refuseé", etudiants=et_5, offre=off_2)
-cand_6 = Candidature.objects.create(date_depot=date.today() - timedelta(days=1), statut="retenue", etudiants=et_1, offre=off_3)
+cand_1 = Candidature.objects.create(date_depot=date.today() - timedelta(days=10), statut="déposée", etudiant=et_1, offre=off_1)
+cand_2 = Candidature.objects.create(date_depot=date.today() - timedelta(days=8), statut="refuseé", etudiant=et_3, offre=off_2)
+cand_3 = Candidature.objects.create(date_depot=date.today() - timedelta(days=5), statut="retenue", etudiant=et_4, offre=off_1)
+cand_4 = Candidature.objects.create(date_depot=date.today() - timedelta(days=4), statut="En déposée", etudiant=et_2, offre=off_3)
+cand_5 = Candidature.objects.create(date_depot=date.today() - timedelta(days=2), statut="En refuseé", etudiant=et_5, offre=off_2)
+cand_6 = Candidature.objects.create(date_depot=date.today() - timedelta(days=1), statut="retenue", etudiant=et_1, offre=off_3)
 
 #stage
 stage_1 = Stage.objects.create(sujet="Développement de l'API de gestion locale - Sokodé Tech",

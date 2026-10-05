@@ -47,8 +47,8 @@ class CompetenceAdmin(admin.ModelAdmin):
     
 @admin.register(Candidature)
 class CandidatureAdmin(admin.ModelAdmin):
-    list_display = ["date_depot","statut","etudiants","offre"]
-    search_fields = ["etudiants",'date_depot']
+    list_display = ["date_depot","statut","etudiant","offre"]
+    search_fields = ["etudiant",'date_depot']
     
 
 @admin.register(Stage)

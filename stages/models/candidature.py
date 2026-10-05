@@ -15,7 +15,7 @@ class Candidature(models.Model):
         
     date_depot = models.DateField()
     statut = models.CharField(choices=Statut)
-    etudiants = models.ForeignKey(
+    etudiant = models.ForeignKey(
         Etudiant,related_name="candidatures",on_delete=models.PROTECT,
         null=True
     )
@@ -28,6 +28,11 @@ class Candidature(models.Model):
 
         verbose_name = "candidature"
         verbose_name_plural = 'candidatures'
+        
+        constraints = [models.UniqueConstraint(
+            fields=["etudiant", "offre"],
+            name="canditater_une_seule_foix_a_une_offre"
+        )]
 
     
 
