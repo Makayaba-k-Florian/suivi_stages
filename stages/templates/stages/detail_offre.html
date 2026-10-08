@@ -1,0 +1,39 @@
+{% extends 'stages/base.html' %}
+{% block titre %}
+  Détail de l'offre : {{ offre.titre }}
+{% endblock %}
+
+{% block contenu %}
+      <h1>{{ offre.titre }}</h1>
+
+
+    <h2>Entreprise</h2>
+    <p><strong>Nom :</strong> {{ offre.entreprise.nom }}</p>
+
+    <h2>Description du poste</h2>
+    <p>{{ offre.description }}</p>
+
+
+    <h2>Détails et Modalités</h2>
+    <ul>
+        <li><strong>Date de début :</strong> {{ offre.date_debut|date:"d/m/Y" }}</li>
+        <li><strong>Date de fin :</strong> {{ offre.date_fin|date:"d/m/Y" }}</li>
+        <li><strong>Nombre de places disponibles :</strong> {{ offre.nb_places }}</li>
+    </ul>
+
+
+    <h2>Compétences requises</h2>
+    {% if offre.competences.all %}
+        <ul>
+            {% for competence in offre.competences.all %}
+                <li>{{ competence.libelle }}</li> 
+                
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Aucune compétence spécifique renseignée.</p>
+    {% endif %}
+
+
+
+{% endblock %}

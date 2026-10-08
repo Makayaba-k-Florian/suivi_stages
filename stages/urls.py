@@ -8,6 +8,9 @@ urlpatterns = [
          name= 'liste_entreprises'),
     
     path('',views.liste_offres,
-             name= 'liste_offres')
+             name= 'liste_offres'),
+    
+    path('/offres/<int:id_offre>/detail',views.detail_offre,
+                 name= 'detail_offre')
     
 ]

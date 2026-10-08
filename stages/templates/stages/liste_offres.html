@@ -11,7 +11,6 @@
     <thead>
       <tr>
         <th>Titre</th>
-        <th>Description</th>
         <th>Dalais</th>
         <th>Nombres de places</th>
         <th>Competences</th>
@@ -21,8 +20,7 @@
     <tbody>
       {% for offre in offres %}
         <tr>
-          <td>{{ offre.titre }}</td>
-          <td>{{ offre.description }}</td>
+          <td><a href="{% url 'stages:detail_offre' offre.id %}">{{ offre.titre }}</a></td>
           <td>{{ offre.date_debut }} - {{ offre.date_fin }}</td>
           <td>{{ offre.nb_places }}</td>
           <td>
