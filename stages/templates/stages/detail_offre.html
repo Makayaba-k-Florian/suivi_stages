@@ -8,7 +8,7 @@
 
 
     <h2>Entreprise</h2>
-    <p><strong>Nom :</strong> {{ offre.entreprise.nom }}</p>
+    <p><strong>Nom :</strong><a href="{% url 'stages:detail_entreprise' offre.entreprise.id %}">{{ offre.entreprise.nom }}</a> </p>
 
     <h2>Description du poste</h2>
     <p>{{ offre.description }}</p>

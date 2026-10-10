@@ -28,7 +28,7 @@
               <div>{{ competence.libelle }}</div>
             {% endfor %}
           </td>
-          <td>{{ offre.entreprise.nom }}</td>
+          <td><a href="{% url 'stages:detail_entreprise' offre.entreprise.id %}">{{ offre.entreprise.nom }}</a></td>
         </tr>
       {% empty %}
         <div>Aucune offres pour le moment.</div>

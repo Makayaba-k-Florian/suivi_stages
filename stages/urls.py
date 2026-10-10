@@ -11,6 +11,9 @@ urlpatterns = [
              name= 'liste_offres'),
     
     path('/offres/<int:id_offre>/detail',views.detail_offre,
-                 name= 'detail_offre')
+                 name= 'detail_offre'),
+    
+     path('/oentreprises/<int:id_entreprise>/detail',views.detail_entreprise,
+                     name= 'detail_entreprise'),
     
 ]
