@@ -1,0 +1,45 @@
+{% extends 'stages/base.html' %}
+
+{% block titre %}
+  Détail de l'entreprise : {{ entreprise.nom }}
+{% endblock %}
+
+{% block contenu %}
+  <!-- Nom de l'entreprise -->
+  <h1>{{ entreprise.nom }}</h1>
+
+  <!-- Informations de l'entreprise -->
+  <h2>Informations générales</h2>
+  <ul>
+    <li>
+      <strong>Secteur d'activité :</strong> {{ entreprise.secteur }}
+    </li>
+    <li>
+      <strong>Ville :</strong> {{ entreprise.ville }}
+    </li>
+    <li>
+      <strong>Contact :</strong> <a href="mailto:{{ entreprise.contact }}">{{ entreprise.contact }}</a>
+    </li>
+  </ul>
+
+  <h2>Offres de stage disponibles</h2>
+
+  {% for offre in entreprise.offres.all %}
+    <div>
+      <br/>
+      <div>
+        <a href="{% url 'stages:detail_offre' offre.id %}">{{ offre.titre }}</a>
+      </div>
+
+      <div>
+        {% for competence in offre.competences.all %}
+          <div>{{ competence.libelle }}</div>
+        {% endfor %}
+      </div>
+    </div>
+  {% empty %}
+    <div>
+      <div colspan="4">Cette entreprise n'a aucune offre de stage pour le moment.</div>
+    </div>
+  {% endfor %}
+{% endblock %}
