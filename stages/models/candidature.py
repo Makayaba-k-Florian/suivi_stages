@@ -14,7 +14,7 @@ class Candidature(models.Model):
         RETENU = "retenue"
         
     date_depot = models.DateField()
-    statut = models.CharField(choices=Statut)
+    statut = models.CharField(choices=Statut,default=Statut.DEPOSEE)
     etudiant = models.ForeignKey(
         Etudiant,related_name="candidatures",on_delete=models.PROTECT,
         null=True

@@ -3,6 +3,7 @@ from .etudiant import Etudiant
 from .competence import Competence 
 from .entreprise import Entreprise
 
+from django.core.exceptions import ValidationError
 
 
 
@@ -26,6 +27,19 @@ class Offre(models.Model):
         related_name="offres"
     )
 
+    def clean(self):
+        if self.date_debut >= self.date_fin:
+            raise ValidationError(
+                {
+                    "date_debut":"la date de debut doit etre inferieur a la date de fin"
+                }
+            )
+        if self.nb_places < 1:
+                raise ValidationError(
+                    {
+                        "nb_places":"le nombres de places doit etre supperieur a 0"
+                    }
+                )
 
     class Meta():
 

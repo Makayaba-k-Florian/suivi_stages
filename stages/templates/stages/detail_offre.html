@@ -34,6 +34,27 @@
         <p>Aucune compétence spécifique renseignée.</p>
     {% endif %}
 
+    <h2>Candidatures reçues</h2>
+    {% if offre.candidatures.all %}
+        <ul>
+            {% for candidature in offre.candidatures.all %}
+                <li>{{ candidature.etudiant.nom }} {{ candidature.etudiant.prenom }} - {{ candidature.date_depot|date:"d F Y" }}</li>
+                {% if candidature.statut == 'déposée' %}
+                    <form method="POST" action="{% url 'stages:changer_statut' candidature.pk %}">
+                        <button name="statut" value='refuseé'>Refuser</button>
+                        <button name="statut" value='retenue'>Retenire</button>
+                        {% csrf_token %}
+                    </form>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Aucune candidature reçue pour cette offre.</p>
+    {% endif %}
 
 
+
+    <a href="{% url 'stages:candidater_offre' offre.id 55 %}" class="btn btn-primary">
+        <button type="button">Candidater à cette offre</button>
+    </a>
 {% endblock %}

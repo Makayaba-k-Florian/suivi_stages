@@ -12,8 +12,19 @@ urlpatterns = [
     
     path('/offres/<int:id_offre>/detail',views.detail_offre,
                  name= 'detail_offre'),
-    
      path('/oentreprises/<int:id_entreprise>/detail',views.detail_entreprise,
                      name= 'detail_entreprise'),
-    
+
+     path('offres/publier/<int:entreprise_id>',
+          views.publier_offre,
+          name= 'publier_offre'),
+     path('offres/<int:offre_id>/<int:etudiant_id>/candidater',
+               views.candidater_offre,
+               name= 'candidater_offre'),
+     path('offres/<int:offre_id>/<int:etudiant_id>/candidater',
+                    views.candidater_offre,
+                    name= 'candidater_offre'),
+     path('candidatures/<int:candidature_id>/changer_statut',
+                    views.changer_statut,
+                    name= 'changer_statut'),
 ]

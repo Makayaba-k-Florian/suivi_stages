@@ -1,0 +1,12 @@
+{% extends 'stages/base.html' %} {% block titre %} Publiée offre {% endblock %}
+{% block contenu %}
+<h1>Nouvelle Offre</h1>
+
+<form  method="POST">
+    {% csrf_token %}
+    {{form}}
+
+  <button type="submit">Publier</button>
+</form>
+
+{% endblock %}

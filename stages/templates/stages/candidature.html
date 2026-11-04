@@ -1,0 +1,13 @@
+{% extends 'stages/base.html' %} {% block titre %} Candidature {% endblock %}
+{% block contenu %}
+<h1>Candidature</h1>
+<h3>{{ offre.titre }} </h3>
+<h3>{{ etudiant.nom }} </h3>
+<form  method="POST">
+    {% csrf_token %}
+    {{form}}
+
+  <button type="submit">Candidater</button>
+</form>
+
+{% endblock %}

@@ -7,7 +7,6 @@ def liste_entreprises(request):
     entreprises = (
     Entreprise.objects
         .prefetch_related("offres")
-        .prefetch_related('competences')
     )
     return render(
         request,
